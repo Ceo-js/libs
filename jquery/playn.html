@@ -1,0 +1,173 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>jQuery</title>
+
+		<!-- [ fonts ] =================================================== -->
+		<!-- [ favicons ] ================================================ -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- [ css ] ===================================================== -->
+		<link rel="stylesheet" href="assets/css/css.css">
+		<script src="j-s.js"></script>
+		<style>
+			:root {
+				--dark0: #15161c;
+				--dark1: #181a21;
+				--dark2: #1d1e27;
+				--dark3: #1e1f29;
+				--dark4: #21222c;
+				--dark5: #282a36;
+				--scaffold: #282a36;
+				--material-blue: #2097f3;
+				--appbar: #fe5cde;
+				--appbar-height: 90px;
+				--drawer-header-height: 68px;
+				--drawer-width-closed: 0px;
+				--drawer-width-opened: 250px;
+			}
+			* { margin: 0; padding: 0; box-sizing: border-box; }
+			body  { display: grid; place-items: center; min-height: 100vh; padding: 6%; background: var(--dark3); color: var(--material-blue); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 2rem; font-weight: 600; }
+			dark0, dark1, dark2, dark3, dark4, dark5, dark6 { 
+				display: grid; place-items: center; width: clamp( 350px, 100%, 1250px ); height: 90px; background: var(--dark5); box-shadow: #15161c 0 0 6px 3px; /* cursor: pointer; */ }
+		</style>
+		<!-- [ GTag ] ==================================================== -->
+		<!-- [ FBPixel ] ================================================= -->
+	</head>
+	<body>
+
+		<dark0>dark0</dark0>
+		<dark1>dark1</dark1>
+		<dark2>dark2</dark2>
+		<dark3>dark3</dark3>
+		<dark4>dark4</dark4>
+		<dark5>dark5</dark5>
+		<dark6>dark6</dark6>
+		
+		
+		<scripts>
+			<script>
+				$( function() {
+				// 	console.table( `oi` );
+				// } );
+				// $( window ).on( "load", function() {
+					var darkList = [
+						$( "dark0" ),
+						$( "dark1" ),
+						$( "dark2" ),
+						$( "dark3" ),
+						$( "dark4" ),
+						$( "dark5" ),
+					];
+					for( dark in darkList ) {
+						$(darkList[dark]).hide();
+						$("dark0").delay(10).fadeIn();
+						$("dark1").delay(20).fadeIn();
+						$("dark2").delay(30).fadeIn();
+						$("dark3").delay(40).fadeIn();
+						$("dark4").delay(50).fadeIn();
+						$("dark5").delay(60).fadeIn();
+						$("dark6").hide();
+						$("dark6").fadeTo(90000, 1);
+
+						darkList[ dark ].mouseover( function() {
+							this.style.cursor = "pointer";
+						} );
+						darkList[ dark ].mousedown( function() {
+							// this.style.cursor = "grabbing";
+							$(this).css( "cursor", "grabbing" );
+						} );
+						darkList[ dark ].mouseup( function() {
+							this.style.cursor = "pointer";
+						} );
+						darkList[ dark ].click( function() {
+							for( vv in bgColorList ) {
+								this.style.backgroundColor = bgColorList[ vv ];
+								console.table( bgColorList );
+							}
+						} );
+					}
+
+					var bgColorList = [
+						"goldenrod", "#80f",
+					];
+
+					setTimeout( ()=> {
+						$("dark5").css("background", "rgb( 174 0 0 )");
+					}, 1000 );
+
+
+				} );
+			</script>
+<!-- 			<script>
+				window.addEventListener( "load", function() {
+
+					var darkList = [
+						document.querySelector( "dark0" ),
+						document.querySelector( "dark1" ),
+						document.querySelector( "dark2" ),
+						document.querySelector( "dark3" ),
+						document.querySelector( "dark4" ),
+						document.querySelector( "dark5" ),
+					];
+
+					for( dark in darkList ) {
+						darkList[ dark ].addEventListener( "mouseover", function() {
+							this.style.cursor = "pointer";
+							// this.innerHTML = `--${this}: ${this.style.background}`;
+						} );
+						darkList[ dark ].addEventListener( "mousedown", function() {
+							this.style.cursor = "grabbing";
+						} );
+						darkList[ dark ].addEventListener( "mouseup", function() {
+							this.style.cursor = "pointer";
+						} );
+						darkList[ dark ].addEventListener( "onwheel", function() {
+							for( v in bgColorList ) {
+								var vv = bgColorList[ v ];
+								this.style.backgroundColor = vv;
+								console.table( vv );
+							}
+						} );
+						darkList[ dark ].addEventListener( "click", function() {
+							navigator.clipboard.writeText(this);
+							// this.outerHTML = "<dark1 style='cursor: pointer; background: goldenrod;'><div style='width: 50px; height: 50px; background: blue;'>dark1</div><div style='width: 50px; height: 50px; background: blue;'>dark1</div></dark1>";
+							for( v in bgColorList ) {
+								var vv = bgColorList[ v ];
+								this.style.backgroundColor = vv;
+								console.table( vv );
+							}
+						} );
+					}
+
+					var bgColorList = [
+						"goldenrod", "#80f", "rgb( 174 0 0 )",
+					]; 
+
+				} );
+			</script> -->
+		</scripts>
+	</body>
+</html>
+
+<!-- 
+$(document).ready(function () {
+    $(".classe").fadeTo(5000, 1);
+    $(selector).click(function (e) { 
+        e.preventDefault();
+        
+    });
+});
+
+$(document).ready(function(){
+    $(".classe").fadeTo(1000, .5);
+    $(selector).mouseover(function () { 
+        
+    });
+}) -->
+
